@@ -1,12 +1,19 @@
-<ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/about-us">About Us</a>
-    </li>
-</ul>
+<nav class="p-3 mb-2 bg-dark text-white ">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active link-light" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" routerLink="/about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-light" routerLink="/contact">Contact</a>
+        </li>
+    </ul>
+</nav>
 
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<body class=" p-3 mb-2 bg-light text-dark">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</body>
