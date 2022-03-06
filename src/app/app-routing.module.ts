@@ -6,7 +6,12 @@ import { AboutUsPageModule } from './pages/about-us.page-module';
 const routes: Routes = [{
   path: '',
   loadChildren: () => HomePageModule
-}];
+},
+{
+  path: 'about-us',
+  loadChildren: () => AboutUsPageModule
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
