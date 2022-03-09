@@ -15,22 +15,22 @@ const routes: Routes = [{
   path: 'about-us',
   loadChildren: () => AboutUsPageModule
 },
-  { 
-        path: 'contact', 
-        loadChildren: () => ContactPageModule
-      },
-  { 
-        path: 'first-person', 
-        loadChildren: () => FirstPersonPageModule
-      },
-  { 
-        path: 'employees', 
-        loadChildren: () => EmployeesPageModule
-      },
-  { 
-        path: 'employee-details', 
-        loadChildren: () => EmployeeDetailsPageModule
-      }
+{
+  path: 'contact',
+  loadChildren: () => ContactPageModule
+},
+{
+  path: 'first-person',
+  loadChildren: () => FirstPersonPageModule
+},
+{
+  path: 'pracownik',
+  loadChildren: () => EmployeesPageModule
+},
+{
+  path: 'pracownik/:name',
+  loadChildren: () => EmployeeDetailsPageModule
+}
 ];
 
 @NgModule({
