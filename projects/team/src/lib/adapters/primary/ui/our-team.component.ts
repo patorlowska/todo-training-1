@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-    selector: 'lib-contact-page',
-    templateUrl: './contact.page.html',
+    selector: 'lib-our-team',
+    templateUrl: './our-team.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactPage {
+export class OurTeamComponent {
 }

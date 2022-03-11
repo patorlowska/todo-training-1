@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageModule } from './pages/home.page-module';
 import { AboutUsPageModule } from './pages/about-us.page-module';
 import { ContactPageModule } from './pages/contact.page-module';
-import { FirstPersonPageModule } from './pages/first-person.page-module';
 import { EmployeesPageModule } from './pages/employees.page-module';
 import { EmployeeDetailsPageModule } from './pages/employee-details.page-module';
 
@@ -18,10 +17,6 @@ const routes: Routes = [{
 {
   path: 'contact',
   loadChildren: () => ContactPageModule
-},
-{
-  path: 'first-person',
-  loadChildren: () => FirstPersonPageModule
 },
 {
   path: 'pracownik',
