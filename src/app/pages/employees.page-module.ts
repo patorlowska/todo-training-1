@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EmployeesPage } from './employees.page';
 import { TeamListComponentModule } from '../../../projects/team/src/lib/adapters/primary/ui/team-list.component-module';
+import { OurTeamComponentModule } from '../../../projects/team/src/lib/adapters/primary/ui/our-team.component-module';
 
 @NgModule({
   imports: [CommonModule,
@@ -12,7 +13,8 @@ import { TeamListComponentModule } from '../../../projects/team/src/lib/adapters
         component: EmployeesPage,
       }
     ]),
-    TeamListComponentModule
+    TeamListComponentModule,
+    OurTeamComponentModule
   ],
   declarations: [EmployeesPage],
   providers: [],
