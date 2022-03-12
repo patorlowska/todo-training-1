@@ -4,7 +4,7 @@ import {
     ChangeDetectionStrategy,
     OnInit
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'lib-employee-details-page',
@@ -13,6 +13,6 @@ import { ActivatedRoute } from '@angular/router';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmployeeDetailsPage {
-    params$ = this._activatedRoute.params;
-    constructor(private _activatedRoute: ActivatedRoute) { }
+    // params$ = this._activatedRoute.params;
+    // constructor(private _activatedRoute: ActivatedRoute) { }
 }
