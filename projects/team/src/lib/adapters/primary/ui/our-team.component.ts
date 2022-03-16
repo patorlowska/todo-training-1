@@ -4,6 +4,7 @@ import { PersonDTO } from '../../../application/ports/secondary/person.dto';
 
 
 
+
 @Component({
     selector: 'lib-our-team',
     templateUrl: './our-team.component.html',

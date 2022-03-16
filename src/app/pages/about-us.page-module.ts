@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import { AboutUsPage } from './about-us.page';
 import { OurTeamComponentModule } from '@team';
 
-
-
 @NgModule({
   imports: [CommonModule,
     RouterModule.forChild([
