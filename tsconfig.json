@@ -21,14 +21,21 @@
         "dist/contact/contact",
         "dist/contact"
       ],
-      "employees": [
-        "dist/employees/employees",
-        "dist/employees"
+      // "employees": [
+      //   "dist/employees/employees",
+      //   "dist/employees"
+      // ],
+      // "team": [
+      //   "dist/team/team",
+      //   "dist/team"
+      // ],
+      "@team": [
+        "projects/team/src/public-api.ts"
       ],
-      "team": [
-        "dist/team/team",
-        "dist/team"
-      ]
+      "navigation": [
+        "dist/navigation/navigation",
+        "dist/navigation"
+      ],
     }
   },
   "angularCompilerOptions": {

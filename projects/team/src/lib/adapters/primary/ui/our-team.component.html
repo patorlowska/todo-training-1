@@ -2,13 +2,13 @@
     <div class="row row-cols-auto justify-content-md-center mb-2">
         <section class="container">
             <div class="row row-cols-auto justify-content-md-center mb-2">
-                <div class="col" *ngFor="let person of persons | async">
+                <div class="col" *ngFor="let person of team$ | async">
                     <div class="card mb-4" style="width: 18rem;">
-                        <img [src]="person.src" class="card-img-top align-self-center" [alt]="person.alt">
+                        <img [src]="person.imageLink" class="card-img-top align-self-center" [alt]="person.name">
                         <div class="card-body">
                             <h5 class="card-title">{{person.name}}</h5>
                             <p class="card-text text-center fw-lighter lh-base">{{person.description}}</p>
-                            <a [href]="person.link">
+                            <a [href]="person.linkUrl">
                                 <svg xmlns=" http://www.w3.org/2000/svg" width="20" height="40" fill="currentColor"
                                     class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16" style="color: #8c68cd;">
                                     <path
