@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { OurTeamComponentModule } from '../../../projects/team/src/lib/adapters/primary/ui/our-team.component-module';
 import { TeamListComponentModule } from '../../../projects/team/src/lib/adapters/primary/ui/team-list.component-module';
+import { FirebaseTeamListServiceModule } from '../../../projects/team/src/lib/adapters/secondary/infrastructure/firebase-team-list.service-module';
 
 @NgModule({ imports: [CommonModule, 
       RouterModule.forChild([
@@ -14,6 +15,7 @@ import { TeamListComponentModule } from '../../../projects/team/src/lib/adapters
       ]),
   OurTeamComponentModule,
   TeamListComponentModule,
+  FirebaseTeamListServiceModule
 ],
   	declarations: [HomePage],
   	providers: [],

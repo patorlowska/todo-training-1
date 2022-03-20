@@ -1,9 +1,7 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PersonDTO } from '../../../application/ports/secondary/person.dto';
-
-
-
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { GETS_ALL_PERSON_DTO, GetsAllPersonDtoPort } from '../../../application/ports/secondary/gets-all-person.dto-port';
 
 @Component({
     selector: 'lib-our-team',
@@ -12,13 +10,17 @@ import { PersonDTO } from '../../../application/ports/secondary/person.dto';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OurTeamComponent {
-    team$: Observable<PersonDTO[]> = of([
+    persons$: Observable<PersonDTO[]> = of([
         {
             id: '1',
             imageLink: 'https://www.glamour.pl/media/cache/default_view/uploads/media/default/0004/20/ralph-lauren-stworzyl-kolekcje-inspirowana-stylem-rachel-green-z-przyjaciol.jpeg',
             name: 'Rachel Green',
             linkUrl: '/pracownik/Rachel Green',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad provident nam accusamus blanditiis quidem distinctio laboriosam nequeveritatis, repudiandae animi, mollitia consectetur deserunt! Laboriosam non maxime nulla, illorecusandae quo.',
+            department: {
+                name: 'Dział Mody',
+                employeeCount: 30000,
+            }
         },
         {
             id: '2',
@@ -27,6 +29,10 @@ export class OurTeamComponent {
             name: 'Monica Geller',
             linkUrl: '/pracownik/Monica Geller',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad provident nam accusamus blanditiis quidem distinctio laboriosam nequeveritatis, repudiandae animi, mollitia consectetur deserunt! Laboriosam non maxime nulla, illorecusandae quo.',
+            department: {
+                name: 'Dział Porządku i Organizacji przestrzeni',
+                employeeCount: 31000,
+            },
         },
         {
             id: '3',
@@ -35,6 +41,15 @@ export class OurTeamComponent {
             name: 'Chandler Bing',
             linkUrl: '/pracownik/Chandler Bing',
             description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad provident nam accusamus blanditiis quidem distinctio laboriosam nequeveritatis, repudiandae animi, mollitia consectetur deserunt! Laboriosam non maxime nulla, illorecusandae quo.',
-        }
-    ])
+            department: {
+                name: 'Dział Reklamy i Poczucia humoru',
+                employeeCount: 30000,
+            },
+        },
+
+    ]);
+  teamList$: Observable<PersonDTO[]> = this._getsAllPersonDto.getAll();
+
+  constructor(@Inject(GETS_ALL_PERSON_DTO) private _getsAllPersonDto: GetsAllPersonDtoPort) {
+  }
 }
