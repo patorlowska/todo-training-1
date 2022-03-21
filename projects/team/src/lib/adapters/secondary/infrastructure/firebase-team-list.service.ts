@@ -12,6 +12,9 @@ export class FirebaseTeamListService implements GetsAllPersonDtoPort {
   }
 
   getAll(criterion: Partial<PersonDTO>): Observable<PersonDTO[]> {
-    return this._client.collection<PersonDTO>('team-list').valueChanges(({ idField: 'id' })).pipe(map((data: PersonDTO[]) => filterByCriterion(data, criterion)));
+    return this._client
+      .collection<PersonDTO>('team-list')
+      .valueChanges(({ idField: 'id' }))
+      .pipe(map((data: PersonDTO[]) => filterByCriterion(data, criterion)));
   }
 }

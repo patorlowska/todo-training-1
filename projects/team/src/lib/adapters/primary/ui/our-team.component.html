@@ -2,7 +2,7 @@
     <div class="row row-cols-auto justify-content-md-center mb-2">
         <section class="container">
             <div class="row row-cols-auto justify-content-md-center mb-2">
-                <div class="col" *ngFor="let person of (persons$ | async)">
+                <div class="col" *ngFor="let person of (teamList$ | async)">
                     <div class="card mb-4" style="width: 18rem;">
                         <img [src]="person.imageLink" class="card-img-top align-self-center" [alt]="person.name">
                         <div class="card-body">
