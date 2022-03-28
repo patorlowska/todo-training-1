@@ -5,9 +5,10 @@ import { map } from 'rxjs/operators';
 import { GetsAllPersonDtoPort } from '../../../application/ports/secondary/gets-all-person.dto-port';
 import { PersonDTO } from '../../../application/ports/secondary/person.dto';
 import { filterByCriterion } from '@lowgular/shared';
+import { AddsPersonDtoPort } from '../../../application/ports/secondary/adds-person.dto-port';
 
 @Injectable()
-export class FirebaseTeamListService implements GetsAllPersonDtoPort {
+export class FirebaseTeamListService implements GetsAllPersonDtoPort, AddsPersonDtoPort {
   constructor(private _client: AngularFirestore) {
   }
 
@@ -16,5 +17,9 @@ export class FirebaseTeamListService implements GetsAllPersonDtoPort {
       .collection<PersonDTO>('team-list')
       .valueChanges(({ idField: 'id' }))
       .pipe(map((data: PersonDTO[]) => filterByCriterion(data, criterion)));
+  }
+
+  add(person: Partial<PersonDTO>): void {
+    this._client.collection('people').add(person);
   }
 }

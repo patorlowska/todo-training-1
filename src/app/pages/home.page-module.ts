@@ -6,19 +6,21 @@ import { OurTeamComponentModule } from '../../../projects/team/src/lib/adapters/
 import { TeamListComponentModule } from '../../../projects/team/src/lib/adapters/primary/ui/team-list.component-module';
 import { FirebaseTeamListServiceModule } from '../../../projects/team/src/lib/adapters/secondary/infrastructure/firebase-team-list.service-module';
 
-@NgModule({ imports: [CommonModule, 
-      RouterModule.forChild([
-        {
-          path: '',
-          component: HomePage,
-        }
-      ]),
-  OurTeamComponentModule,
-  TeamListComponentModule,
-  FirebaseTeamListServiceModule
-],
-  	declarations: [HomePage],
-  	providers: [],
-  	exports: [] })
+@NgModule({
+  imports: [CommonModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: HomePage,
+      }
+    ]),
+    OurTeamComponentModule,
+    TeamListComponentModule,
+    FirebaseTeamListServiceModule
+  ],
+  declarations: [HomePage],
+  providers: [],
+  exports: []
+})
 export class HomePageModule {
 }

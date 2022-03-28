@@ -5,6 +5,7 @@ import { AboutUsPageModule } from './pages/about-us.page-module';
 import { ContactPageModule } from './pages/contact.page-module';
 import { EmployeesPageModule } from './pages/employees.page-module';
 import { EmployeeDetailsPageModule } from './pages/employee-details.page-module';
+import { AdminPageModule } from './pages/admin.page-module';
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [{
 {
   path: 'pracownik/:name',
   loadChildren: () => EmployeeDetailsPageModule
+},
+{
+  path: 'admin',
+  loadChildren: () => AdminPageModule
 }
 ];
 

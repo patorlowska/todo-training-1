@@ -1,0 +1,8 @@
+<form [formGroup]="createEmployee" (ngSubmit)="onCreateEmployeeSubmited(createEmployee)">
+    <input type="text" formControlName="name" placeholder="Nazwa pracownika">
+    <input type="text" formControlName="description" placeholder="Opis">
+    <input type="text" formControlName="linkUrl" placeholder="Link do profilu">
+    <input type="text" formControlName="imageLink" placeholder="Zdjęcie">
+    <input type="text" formControlName="department" placeholder="Oddział">
+    <input type="submit" value="Submit">
+</form>
