@@ -2,40 +2,29 @@
     <h3>Skontaktuj się z nami !</h3>
 </div>
 
+<form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmited(contactForm)">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">
+            <h5 style="margin-right: 10px;">Imię:</h5>
+            <input type="text" formControlName='name' placeholder="Imię....">
+        </label>
+    </div>
 
-<form [formGroup]="contactForm" (ngSubmit)="onFormSubmited(contactForm)">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">
             <h5 style="margin-right: 10px;">Email:</h5>
             <input type="text" formControlName="email" placeholder="example@email.com">
         </label>
-
     </div>
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">
             <h5 style="margin-right: 10px;">Komentarz:</h5>
         </label>
-        <textarea placeholder="Wpisz swój komentarz" type="text" class="form-control" formControlName="text" rows="3">
+        <textarea placeholder="Wpisz swój komentarz" type="text" class="form-control" formControlName='comment'
+            rows="3">
         </textarea>
     </div>
     <div>
         <button value="Submit" type="submit" class="btn btn-lg btn-primary">Wyślij</button>
     </div>
-
-
 </form>
-
-
-
-<!-- <div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Komentarz</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-
-    <button type="button" class="btn btn-lg btn-primary" disabled>Wyślij</button>
-</div>-->

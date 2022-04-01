@@ -20,6 +20,6 @@ export class FirebaseTeamListService implements GetsAllPersonDtoPort, AddsPerson
   }
 
   add(person: Partial<PersonDTO>): void {
-    this._client.collection('people').add(person);
+    this._client.collection('team-list').add(person);
   }
 }
