@@ -14,7 +14,7 @@ import { FirebaseTeamListServiceModule } from '../../../projects/team/src/lib/ad
       }
     ]),
     OurTeamComponentModule,
-    FirebaseTeamListServiceModule
+    FirebaseTeamListServiceModule,
   ],
   declarations: [AboutUsPage],
   providers: [],

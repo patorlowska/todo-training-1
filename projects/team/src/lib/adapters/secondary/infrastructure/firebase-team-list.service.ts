@@ -6,9 +6,11 @@ import { GetsAllPersonDtoPort } from '../../../application/ports/secondary/gets-
 import { PersonDTO } from '../../../application/ports/secondary/person.dto';
 import { filterByCriterion } from '@lowgular/shared';
 import { AddsPersonDtoPort } from '../../../application/ports/secondary/adds-person.dto-port';
+import { GetsOnePersonDtoPort } from '../../../application/ports/secondary/gets-one-person.dto-port';
 
 @Injectable()
-export class FirebaseTeamListService implements GetsAllPersonDtoPort, AddsPersonDtoPort {
+export class FirebaseTeamListService implements GetsAllPersonDtoPort, AddsPersonDtoPort,
+  GetsOnePersonDtoPort {
   constructor(private _client: AngularFirestore) {
   }
 
@@ -21,5 +23,11 @@ export class FirebaseTeamListService implements GetsAllPersonDtoPort, AddsPerson
 
   add(person: Partial<PersonDTO>): void {
     this._client.collection('team-list').add(person);
+  }
+
+  getOne(id: string): Observable<PersonDTO> {
+    return this._client
+      .doc<PersonDTO>('team-list/' + id)
+      .valueChanges({ idField: 'id' });
   }
 }
