@@ -24,7 +24,7 @@ const routes: Routes = [{
   loadChildren: () => EmployeesPageModule
 },
 {
-  path: 'person',
+  path: 'pracownik',
   loadChildren: () => EmployeeDetailsPageModule
 },
 {

@@ -1,8 +1,33 @@
 <!-- <section> -->
-<!-- <h1> {{(params$ | async)?.name}} </h1> -->
+<div *ngIf="employee$ | async as employee">
+    <div *ngIf="employee.name; else empty">
+        <h1> {{employee.name}} </h1>
 
+        <p>
+            {{employee.description}}
 
-{{employee$ | async | json}}
+        </p>
+        <p>
+            {{employee.department.name}}
+        </p>
+
+        <p>
+            {{employee.department.employeeCount}}
+        </p>
+
+        <p>
+            {{employee.imageLink}}
+        </p>
+
+        <img [src]="employee.imageLink" class="card-img-top align-self-center" [alt]="employee.name">
+
+    </div>
+</div>
+<ng-template #empty>Przykro nam nie ma takiego pracownika</ng-template>
+<!-- 
+<h2>podgląd</h2>
+
+{{employee$ | async | json}} -->
 
 
 
