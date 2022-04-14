@@ -1,6 +1,6 @@
 <!-- <section> -->
 <div *ngIf="employee$ | async as employee">
-    <div *ngIf="employee.name; else empty">
+    <div class="container" *ngIf="employee.name; else empty">
         <h1> {{employee.name}} </h1>
 
         <p>
@@ -24,11 +24,3 @@
     </div>
 </div>
 <ng-template #empty>Przykro nam nie ma takiego pracownika</ng-template>
-<!-- 
-<h2>podgląd</h2>
-
-{{employee$ | async | json}} -->
-
-
-
-<!-- </section> -->

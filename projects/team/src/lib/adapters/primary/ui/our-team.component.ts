@@ -3,6 +3,7 @@ import { PersonDTO } from '../../../application/ports/secondary/person.dto';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { GETS_ALL_PERSON_DTO, GetsAllPersonDtoPort } from '../../../application/ports/secondary/gets-all-person.dto-port';
 import { map } from 'rxjs/operators';
+import { CONTEXT_DTO_STORAGE, ContextDtoStoragePort } from '../../../application/ports/secondary/context-dto.storage-port';
 
 @Component({
     selector: 'lib-our-team',
@@ -22,6 +23,12 @@ export class OurTeamComponent {
             )
         );
 
-    constructor(@Inject(GETS_ALL_PERSON_DTO) private _getsAllPersonDto: GetsAllPersonDtoPort) {
+    constructor(@Inject(GETS_ALL_PERSON_DTO)
+    private _getsAllPersonDto: GetsAllPersonDtoPort, @Inject(CONTEXT_DTO_STORAGE)
+        private _contextDtoStorage: ContextDtoStoragePort) {
+    }
+
+    onEmployeeClicked(person: PersonDTO): void {
+        this._contextDtoStorage.next({ personId: person.id });
     }
 }
