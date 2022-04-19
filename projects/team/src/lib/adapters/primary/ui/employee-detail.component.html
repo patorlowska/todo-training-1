@@ -1,26 +1,25 @@
-<!-- <section> -->
 <div *ngIf="employee$ | async as employee">
-    <div class="container" *ngIf="employee.name; else empty">
-        <h1> {{employee.name}} </h1>
-
-        <p>
-            {{employee.description}}
-
-        </p>
-        <p>
-            {{employee.department.name}}
-        </p>
-
-        <p>
-            {{employee.department.employeeCount}}
-        </p>
-
-        <p>
-            {{employee.imageLink}}
-        </p>
-
-        <img [src]="employee.imageLink" class="card-img-top align-self-center" [alt]="employee.name">
+    <div class="container p-5" *ngIf="employee.name; else empty">
+        <div class="card mb-3" style="max-width: 800px;">
+            <div class="row g-3">
+                <div class="col p-2">
+                    <img [src]="employee.imageLink" class="card-img-top align-self-center" [alt]="employee.name">
+                </div>
+                <div class="col p-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{employee.name}}</h5>
+                        <h4 class="fs-5"> {{employee.department.name}}</h4>
+                        <p class="card-text"> {{employee.description}}</p>
+                        <p class="card-text"><small class="text-muted">{{employee.department.employeeCount}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
+
+
+
+
 <ng-template #empty>Przykro nam nie ma takiego pracownika</ng-template>
