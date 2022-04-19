@@ -29,7 +29,6 @@ export class CreateEmployeeComponent {
         this._addsPersonDto.add({
             name: createEmployee.get('name').value,
             description: createEmployee.get('description').value,
-            // linkUrl: createEmployee.get('linkUrl').value,
             imageLink: createEmployee.get('imageLink').value,
             department: createEmployee.get('department').value,
         });

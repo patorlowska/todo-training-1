@@ -5,6 +5,5 @@ export interface PersonDTO {
   readonly imageLink: string;
   readonly name: string;
   readonly description: string;
-  // readonly linkUrl: string;
   readonly department: DepartmentDTO;
 }

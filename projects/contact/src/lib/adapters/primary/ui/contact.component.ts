@@ -29,6 +29,5 @@ export class ContactComponent {
       comment: contactForm.get('comment').value,
     });
     contactForm.reset();
-
   }
 }

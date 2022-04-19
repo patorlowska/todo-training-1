@@ -2,8 +2,7 @@ import { Observable, of } from 'rxjs';
 import { PersonDTO } from '../../../application/ports/secondary/person.dto';
 import { Component, ViewEncapsulation, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { GETS_ALL_PERSON_DTO, GetsAllPersonDtoPort } from '../../../application/ports/secondary/gets-all-person.dto-port';
-import { filter, map } from 'rxjs/operators';
-// import { CONTEXT_DTO_STORAGE, ContextDtoStoragePort } from '../../../application/ports/secondary/context-dto.storage-port';
+import { map } from 'rxjs/operators';
 
 @Component({
     selector: 'lib-our-team',
